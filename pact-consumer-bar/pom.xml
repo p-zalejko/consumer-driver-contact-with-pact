@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.gmail.pzalejko</groupId>
-	<artifactId>pact-provider</artifactId>
+	<artifactId>pact-consumer-bar</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>pact-provider</name>
-	<description>Pact provider</description>
+	<name>pact-consumer-bar</name>
+	<description>Pact consumer Bar</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -27,13 +27,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-		<dependency>
-			<groupId>au.com.dius.pact.provider</groupId>
-			<artifactId>junit5</artifactId>
-			<version>4.2.13</version>
-			<scope>test</scope>
-		</dependency>
 	</dependencies>
 
 	<build>
@@ -41,15 +34,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-
-			<plugin>
-				<groupId>au.com.dius</groupId>
-				<artifactId>pact-jvm-provider-maven</artifactId>
-				<version>4.0.10</version>
-				<configuration>
-					<pactBrokerUrl>http://localhost:9292</pactBrokerUrl>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
