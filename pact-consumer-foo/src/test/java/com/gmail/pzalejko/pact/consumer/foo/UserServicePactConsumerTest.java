@@ -33,10 +33,10 @@ public class UserServicePactConsumerTest {
     public RequestResponsePact userExists(PactDslWithProvider builder) {
         // @formatter:off
         return builder
-            .given("User 1 exists")
+            .given("User 10 exists")
                 .uponReceiving("find user by ID 1")
                 .method("GET")
-                .path("/users/1")
+                .path("/users/10")
             .willRespondWith()
                 .status(200)
                 .body(BODY)
@@ -48,10 +48,10 @@ public class UserServicePactConsumerTest {
     public RequestResponsePact userDoesNotExist(PactDslWithProvider builder) {
         // @formatter:off
         return builder
-            .given("valid date received from provider")
-                .uponReceiving("valid date from provider")
+            .given("User 20 does not exist")
+                .uponReceiving("valid 404 when a user does not exist")
                 .method("GET")
-                .path("/users/2")
+                .path("/users/20")
             .willRespondWith()
                 .status(404)
            .toPact();
@@ -61,7 +61,7 @@ public class UserServicePactConsumerTest {
     @Test
     @PactTestFor(pactMethod = "userExists")
     public void testUserExists(MockServer mockServer) throws IOException {
-        var httpResponse = Request.Get(mockServer.getUrl() + "/users/1").execute().returnResponse();
+        var httpResponse = Request.Get(mockServer.getUrl() + "/users/10").execute().returnResponse();
         var responseAsJson = JsonPath.parse(httpResponse.getEntity().getContent());
 
         assertThat(httpResponse.getStatusLine().getStatusCode()).isEqualTo(200);
@@ -73,7 +73,7 @@ public class UserServicePactConsumerTest {
     @Test
     @PactTestFor(pactMethod = "userDoesNotExist")
     public void testUserDoesNotExist(MockServer mockServer) throws IOException {
-        var statusCode = Request.Get(mockServer.getUrl() + "/users/2")
+        var statusCode = Request.Get(mockServer.getUrl() + "/users/20")
                 .execute()
                 .returnResponse()
                 .getStatusLine()
