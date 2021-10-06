@@ -50,6 +50,10 @@
 				<version>4.0.10</version>
 				<configuration>
 					<pactBrokerUrl>http://localhost:9292</pactBrokerUrl>
+					<tags>
+						<tag>UAT</tag>
+						<tag>${env.GIT_COMMIT_HASH_SHORT}</tag>
+					</tags>
 				</configuration>
 			</plugin>
 		</plugins>
