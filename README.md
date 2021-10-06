@@ -1,1 +1,1 @@
-# consumer-driver-contact-with-pact
+# service-discovery-intro
