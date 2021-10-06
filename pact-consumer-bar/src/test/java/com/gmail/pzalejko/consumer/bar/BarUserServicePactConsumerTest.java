@@ -1,6 +1,5 @@
 package com.gmail.pzalejko.consumer.bar;
 
-import org.apache.commons.io.IOUtils;
 import org.apache.http.client.fluent.Request;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
