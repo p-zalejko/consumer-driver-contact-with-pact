@@ -34,6 +34,5 @@ public class UserServiceProviderTest {
     void verifyPact(PactVerificationContext context) {
         context.verifyInteraction();
     }
-
     
 }

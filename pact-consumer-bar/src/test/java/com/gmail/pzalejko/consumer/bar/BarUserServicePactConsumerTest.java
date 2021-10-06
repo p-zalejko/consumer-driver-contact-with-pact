@@ -1,5 +1,6 @@
-package com.gmail.pzalejko.pact.consumer.foo;
+package com.gmail.pzalejko.consumer.bar;
 
+import org.apache.commons.io.IOUtils;
 import org.apache.http.client.fluent.Request;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -20,21 +21,21 @@ import java.io.IOException;
 import com.jayway.jsonpath.JsonPath;
 
 @ExtendWith(PactConsumerTestExt.class)
-public class UserServicePactConsumerTest {
+public class BarUserServicePactConsumerTest {
 
-    static final String CONSUMER_NAME = "consumer-foo";
+    static final String CONSUMER_NAME = "consumer-bar";
     static final String PROVIDER_NAME = "UserService";
 
-    static final DslPart BODY = new PactDslJsonBody()
-            .numberType("id", 123) // here we compare only type!
-            .stringValue("name", "Frank"); // here we compare type AND value!
+    static final DslPart BODY = new PactDslJsonBody().numberType("id") // here we compare only type!
+            .stringValue("name", "Frank") // here we compare type AND value!
+            .stringValue("email", "bar@example.com"); // here we compare type AND value!
 
     @Pact(consumer = CONSUMER_NAME, provider = PROVIDER_NAME)
     public RequestResponsePact userExists(PactDslWithProvider builder) {
         // @formatter:off
         return builder
             .given("User 1 exists")
-                .uponReceiving("find user by ID 1")
+                .uponReceiving("validate 200 when the user exists")
                 .method("GET")
                 .path("/users/1")
             .willRespondWith()
@@ -48,8 +49,8 @@ public class UserServicePactConsumerTest {
     public RequestResponsePact userDoesNotExist(PactDslWithProvider builder) {
         // @formatter:off
         return builder
-            .given("valid date received from provider")
-                .uponReceiving("valid date from provider")
+            .given("User 2 does not exist")
+                .uponReceiving("valid 404 when a user does not exist")
                 .method("GET")
                 .path("/users/2")
             .willRespondWith()
@@ -65,9 +66,10 @@ public class UserServicePactConsumerTest {
         var responseAsJson = JsonPath.parse(httpResponse.getEntity().getContent());
 
         assertThat(httpResponse.getStatusLine().getStatusCode()).isEqualTo(200);
-       
+
         assertThat(responseAsJson.read("$.id", Long.class)).isNotNull();
         assertThat(responseAsJson.read("$.name", String.class)).isEqualTo("Frank");
+        assertThat(responseAsJson.read("$.email", String.class)).isEqualTo("bar@example.com");
     }
 
     @Test
