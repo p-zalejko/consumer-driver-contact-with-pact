@@ -1,226 +1,154 @@
-# Service discovery 
+# Consumer-Driven Contracts
 
-### the good the bad and the k8s
+### with Pact
 
----
-
-## The definition
-
-
-> Service discovery is how applications and (micro)services locate each other on a network
-
-[source](https://www.getambassador.io/resources/service-discovery-microservices/)
-
-
-> Service discovery is the automatic detection of devices and services offered by these devices on a computer network.
-
-[source](https://en.wikipedia.org/wiki/Service_discovery)
-
+Note: 
+* who knows?
+* who uses?
+* who knows pact?
 
 ---
 
 ## The problem
 
-![title](assets/img/service_discovery_problem.png)
-
-[source](https://www.nginx.com/blog/service-discovery-in-a-microservices-architecture/)
+![title](assets/img/simple-rest.png)
 
 ---
 
+## The problem
+
+![title](assets/img/advanced-rest.png)
+
+---
+
+## The problem
+
+![title](assets/img/advanced-rest-with-events.png)
+
+Notes:
+* many services
+* many APIs
+* probably different release cycles (CI/CD)
+
+---
     
-## Why do we need service discovery? 
+## Consumer-Driven Contracts to the rescue
 
-* reduce effort
+![title](assets/img/pact-summary.png)
 
-* discover each other dynamically
+[source](https://docs.pact.io/)
 
-* health monitoring
-
-* load balancing
-
-
----
-
-## Kinds of Service Discovery
-
-* Server-side service discovery
-* Client-side service discovery
+Notes:
+* explain why
+* explain how it works
+* consumer creates the contract
+* consumer tests the contract
+* providers tests the contract as well
+* both sides test the contract
 
 ---
 
-## Server-side service discovery
+## CDC - what we will get
+* Isolation
+* Simplified End-to-End Tests (lack of e2e?)
+* Feedback Time
+* Stability
+* Well-Fittedness
+* Reveal Unused Interfaces
 
-> When making a request to a service, the client makes a request via a router (a.k.a load balancer) that runs at a well known location. The router queries a service registry, which might be built into the router, and forwards the request to an available service instance.
+[source](https://reflectoring.io/7-reasons-for-consumer-driven-contracts/)
 
-[source](https://microservices.io/patterns/server-side-discovery.html)
+## CDC - when it does not fit
+* public APIs for unknown consumers
+* we have very few services (one, two...) 
 
-
----
-
-## Server-side service discovery
-
-![title](assets/img/server-side-discovery.jpg)
-
-
----
-
-## Client-side service discovery
-
-> When making a request to a service, the client obtains the location of a service instance by querying a Service Registry, which knows the locations of all service instances.
-
-[source](https://microservices.io/patterns/client-side-discovery.html)
+Notes:
+* unknown services - do we know what they need?
+* CDC tests explicit consumer's contracts!
 
 ---
 
-## Client-side service discovery
+## Pact
+### https://pact.io/
 
-![title](assets/img/client-side-discovery.jpg)
-
----
-
-## Implementations
-
-* DNS Service Discovery (DNS-SD)
-* Service Location Protocol (SLP)
-* Apache Zookeeper, Consul, etcd, Netflix Eureka etc.
-
+> Fast, easy and reliable testing for integrating web apps, APIs and microservices
 
 ---
 
-## k8s - basics
+## Consumer
 
-- deplpyment
-- pod
-- service
-- ingress
+* defines the contracts (expectations)
 
-Note: 
-ingress exposes services)
+Notes:
+* what the consumer needs
+* matchery (type vs value) 
 
 ---
 
-## k8s - basics
 
+## Contract
 
-![title](assets/img/k8s.png)
-
----
-
-## Service
-
-- server-side service discovery
-- load balancer
-- relies on readiness ~~and liveness~~ probes 
-- uses selectors
-
----
-
-## Service - example
-
-```yaml
-apiVersion: v1
-kind: Service                      (1)
-metadata:
-  name: my-service
-spec:
-  selector:
-    app: MyApp                     (2)
-  ports:
-    - protocol: TCP
-      port: 80                     (3)
-      targetPort: 9376
+```
+{
+  "consumer": {
+    "name": "consumer-bar"
+  },
+  "interactions": [
+    {
+      "description": "validate HTTP 200 when the user exists",
+      "providerStates": [
+        {
+          "name": "User 1 exists"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/users/1"
+      },
+      "response": {
+        "body": {
+          "email": "bar@example.com",
+          "id": 1,
+          "name": "Frank"
+        },
+        ...
 ```
 
 ---
 
-## Netflix Eureka
+## Provider
 
-![title](assets/img/eureka_arch.png)
+* fulfils the contract
+* "signs up the contract"
 
-[source](https://www.codeprimers.com/client-side-service-discovery-in-spring-boot-with-netflix-eureka/)
-
----
-
-## Netflix Eureka - core elements
-
-* Service registry
-* Eureka client
+Notes:
+* explain @State and how it works (how it "finds" rest controller)
+* consumerVersionSelector
+* pending contracts
+* testing all contracts vs one contract
 
 ---
 
-## Ribbon
+## Broker
 
-![title](assets/img/ribbon.jpg)
+* centralized contract registry
+* keeps validation results
+* allows to determine if contracts are met
+* graphs on the broker
 
-[source](https://www.javaxp.com/2020/06/client-side-load-balancing-using-eureka.html)
-
-
----
-
-## Spring + Eureka + Ribbon
-
-![title](assets/img/spring_eureka_ribbon.png)
-
----
-
-## Spring + Eureka + Ribbon + k8s
-
-![title](assets/img/spring_eureka_ribbon_k8s.png)
+Notes:
+- versioning!
+- tags
+- matrix table
+- best practices: git hash, branch, environment name, etc.
 
 ---
 
-# Lessons Learned
+## DEMO
+
+![title](https://github.com/p-zalejko/consumer-driver-contact-with-pact)
+
+[The source code is on GitHub](https://github.com/p-zalejko/consumer-driver-contact-with-pact)
 
 ---
 
-## Refresh interval is crucial
-
-* eureka server (many parameters)
-* eureka client (`registryFetchIntervalSeconds`)
-* ribbon (`ServerListRefreshInterval`)
-
-Note: 
-client-side load balancers need to get the  new list of services
-
----
-
-## k8s readiness and liveness probes vs Eureka
-
-* Eureka has its own solutions
-* k8s solutions control Pods, impact Services and Ingresses
-
----
-
-## Eureka self-preservation mode and k8s can be tricky
-
-> The mechanism that stops evicting the instances when the heartbeats are below the expected threshold is called self-preservation. This might happen in the case of a poor network partition, where the instances are still up, but just can't be reached for a moment or in the case of an abrupt client shutdown.
-
-[source](https://www.baeldung.com/eureka-self-preservation-renewal)
-
----
-
-## Graceful shutdown
- 
-always...
-
-Note: 
-deregister from external systems, brokers, databases etc.
-create a proper dockerfile configuration
-use readiness and liveness
-
----
-
-## Ugly solution 
-### "Delayed" shutdown
-
-* have a custom shutdown endpoint
-* check your configuration and count time
-* deregister the service but do not stop it yet
-* wait for refreshing list of services by all instances
-* stop it now
-
-Note:
-Count time of refresh, all parts.
-Ribbon, eureka client and server
-
----
