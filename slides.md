@@ -26,9 +26,9 @@ Note:
 ![title](assets/img/advanced-rest-with-events.png)
 
 Note:
-* many services
-* many APIs
-* probably different release cycles (CI/CD)
+-many services
+-many APIs
+-probably different release cycles (CI/CD)
 
 ---
     
@@ -39,12 +39,12 @@ Note:
 [source](https://docs.pact.io/)
 
 Note:
-* explain why
-* explain how it works
-* consumer creates the contract
-* consumer tests the contract
-* providers tests the contract as well
-* both sides test the contract
+-explain why
+-explain how it works
+-consumer creates the contract
+-consumer tests the contract
+-providers tests the contract as well
+-both sides test the contract
 
 ---
 
@@ -60,7 +60,7 @@ Note:
 
 ---
 
-## CDC - when it does not fit
+## When it does not fit
 * public APIs for unknown consumers
 * we have very few services (one, two...) 
 
