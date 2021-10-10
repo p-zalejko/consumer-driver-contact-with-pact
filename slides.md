@@ -25,7 +25,7 @@ Note:
 
 ![title](assets/img/advanced-rest-with-events.png)
 
-Notes:
+Note:
 * many services
 * many APIs
 * probably different release cycles (CI/CD)
@@ -38,7 +38,7 @@ Notes:
 
 [source](https://docs.pact.io/)
 
-Notes:
+Note:
 * explain why
 * explain how it works
 * consumer creates the contract
@@ -58,11 +58,13 @@ Notes:
 
 [source](https://reflectoring.io/7-reasons-for-consumer-driven-contracts/)
 
+---
+
 ## CDC - when it does not fit
 * public APIs for unknown consumers
 * we have very few services (one, two...) 
 
-Notes:
+Note:
 * unknown services - do we know what they need?
 * CDC tests explicit consumer's contracts!
 
@@ -79,7 +81,7 @@ Notes:
 
 * defines the contracts (expectations)
 
-Notes:
+Note:
 * what the consumer needs
 * matchery (type vs value) 
 
@@ -121,7 +123,7 @@ Notes:
 * fulfils the contract
 * "signs up the contract"
 
-Notes:
+Note:
 * explain @State and how it works (how it "finds" rest controller)
 * consumerVersionSelector
 * pending contracts
