@@ -27,9 +27,8 @@ Note:
 
 
 Note: 
--many services
--many APIs
--probably different release cycles (CI/CD)
+* who knows? many services, many APIs, probably different release cycles (CI/CD)
+
 
 ---
     
