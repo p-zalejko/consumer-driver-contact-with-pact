@@ -25,7 +25,8 @@ Note:
 
 ![title](assets/img/advanced-rest-with-events.png)
 
-Note:
+
+Note: 
 -many services
 -many APIs
 -probably different release cycles (CI/CD)
