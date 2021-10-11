@@ -1745,6 +1745,10 @@ $notesWidthPercent: 25%;
 	display: block;
 }
 
+code.hljs.json {
+    font-size: 35px;
+}
+
 @media screen and (min-width: 1600px) {
 	.reveal .speaker-notes {
 		font-size: 20px;

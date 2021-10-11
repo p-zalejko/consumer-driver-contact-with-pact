@@ -25,11 +25,6 @@ Note:
 
 ![title](assets/img/advanced-rest-with-events.png)
 
-
-Note: 
-* who knows? many services, many APIs, probably different release cycles (CI/CD)
-
-
 ---
     
 ## Consumer-Driven Contracts to the rescue
@@ -39,16 +34,18 @@ Note:
 [source](https://docs.pact.io/)
 
 Note:
--explain why
--explain how it works
--consumer creates the contract
--consumer tests the contract
--providers tests the contract as well
--both sides test the contract
+* explain why - many services, many APIs, probably different release cycles (CI/CD)
+* explain how it works
+* consumer creates the contract
+* consumer tests the contract
+* providers tests the contract as well
+* both sides test the contract
 
 ---
 
-## CDC - what we will get
+## Consumer-Driven Contracts
+### What we will get
+
 * Isolation
 * Simplified End-to-End Tests (lack of e2e?)
 * Feedback Time
@@ -60,7 +57,9 @@ Note:
 
 ---
 
-## When it does not fit
+## Consumer-Driven Contracts
+### When it does not fit
+
 * public APIs for unknown consumers
 * we have very few services (one, two...) 
 
@@ -90,7 +89,7 @@ Note:
 
 ## Contract
 
-```
+```JSON
 {
   "consumer": {
     "name": "consumer-bar"
@@ -138,7 +137,7 @@ Note:
 * allows to determine if contracts are met
 * graphs on the broker
 
-Notes:
+Note:
 - versioning!
 - tags
 - matrix table
@@ -151,6 +150,19 @@ Notes:
 ![title](https://github.com/p-zalejko/consumer-driver-contact-with-pact)
 
 [The source code is on GitHub](https://github.com/p-zalejko/consumer-driver-contact-with-pact)
+
+---
+
+## Worth reading
+
+* [Not only Pact for CDC](https://docs.pact.io/getting_started/comparisons/)
+* [Pending contracts](https://docs.pact.io/pact_broker/advanced_topics/pending_pacts/)
+* [WIP contracts](https://docs.pact.io/pact_broker/advanced_topics/wip_pacts/)
+* [Versioning and tags!](https://docs.pact.io/getting_started/versioning_in_the_pact_broker/)
+* [Events](https://blog.testproject.io/2020/06/03/event-driven-architecture-how-to-perform-contract-testing-in-kafka-pubsub/)
+* [Not only Java](https://docs.pact.io/implementation_guides/cli/)
+* [CI/CD is a challenge](https://docs.pact.io/pact_nirvana/)
+* [Can I Deploy](https://docs.pact.io/pact_broker/can_i_deploy/)
 
 ---
 
