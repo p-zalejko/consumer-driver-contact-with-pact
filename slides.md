@@ -29,7 +29,8 @@ Note:
 ---
 
 
-# CDC to the rescue
+## Consumer-Driven Contracts
+### to the rescue
 
 ![title](assets/img/pact-summary.png)
 
