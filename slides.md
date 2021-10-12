@@ -147,7 +147,6 @@ Note:
 
 ## DEMO
 
-![title](https://github.com/p-zalejko/consumer-driver-contact-with-pact)
 
 [The source code is on GitHub](https://github.com/p-zalejko/consumer-driver-contact-with-pact)
 
