@@ -25,9 +25,11 @@ Note:
 
 ![title](assets/img/advanced-rest-with-events.png)
 
+
 ---
-    
-## Consumer-Driven Contracts to the rescue
+
+
+# CDC to the rescue
 
 ![title](assets/img/pact-summary.png)
 
