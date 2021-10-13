@@ -13,11 +13,20 @@ Note:
 
 ![title](assets/img/simple-rest.png)
 
+Note:
+* why - few services
+* why - one team or maybe two?
+
 ---
 
 ## The problem
 
 ![title](assets/img/advanced-rest.png)
+
+Note:
+* why - many services, many APIs
+* why - many teams, different release cycles (CI/CD)
+
 
 ---
 
@@ -36,8 +45,8 @@ Note:
 [source](https://docs.pact.io/)
 
 Note:
-* explain why - many services, many APIs, probably different release cycles (CI/CD)
-* explain how it works
+* why - many services, many APIs
+* why - many teams, different release cycles (CI/CD)
 * consumer creates the contract
 * consumer tests the contract
 * providers tests the contract as well
