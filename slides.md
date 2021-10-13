@@ -127,6 +127,9 @@ Note:
         ...
 ```
 
+NOTE:
+* show the file later (during a live demo)
+
 ---
 
 ## Provider
