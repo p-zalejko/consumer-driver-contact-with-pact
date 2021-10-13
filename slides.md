@@ -157,12 +157,12 @@ Note:
 
 ## Worth reading
 
-* [Not only Pact for CDC](https://docs.pact.io/getting_started/comparisons/)
+* [Not only Pact](https://docs.pact.io/getting_started/comparisons/)
+* [Not only Java](https://docs.pact.io/implementation_guides/cli/)
 * [Pending contracts](https://docs.pact.io/pact_broker/advanced_topics/pending_pacts/)
 * [WIP contracts](https://docs.pact.io/pact_broker/advanced_topics/wip_pacts/)
 * [Versioning and tags!](https://docs.pact.io/getting_started/versioning_in_the_pact_broker/)
 * [Events](https://blog.testproject.io/2020/06/03/event-driven-architecture-how-to-perform-contract-testing-in-kafka-pubsub/)
-* [Not only Java](https://docs.pact.io/implementation_guides/cli/)
 * [CI/CD is a challenge](https://docs.pact.io/pact_nirvana/)
 * [Can I Deploy](https://docs.pact.io/pact_broker/can_i_deploy/)
 
