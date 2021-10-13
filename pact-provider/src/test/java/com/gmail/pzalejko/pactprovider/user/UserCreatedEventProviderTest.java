@@ -1,4 +1,5 @@
 package com.gmail.pzalejko.pactprovider.user;
+
 import java.util.Map;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -7,6 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
@@ -28,6 +30,9 @@ import au.com.dius.pact.provider.junitsupport.loader.PactBroker;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class UserCreatedEventProviderTest {
 
+    @Autowired
+    ObjectMapper mapper;
+
     @TestTemplate
     @ExtendWith(PactVerificationInvocationContextProvider.class)
     void testTemplate(Pact pact, Interaction interaction, PactVerificationContext context) {
@@ -41,14 +46,9 @@ public class UserCreatedEventProviderTest {
 
     @PactVerifyProvider("a user created event")
     public MessageAndMetadata userCreatedTest() throws JsonProcessingException {
-        var mapper = new ObjectMapper();
-      
         var event = new UserCreatedEvent("1", "Frank", "bar@example.com");
         var eventAsBytes = mapper.writeValueAsString(event).getBytes();
-        var headers = Map.of(
-            "kafka_topic", "users",
-            "Content-Type", "appkication/json"
-        );
+        var headers = Map.of("kafka_topic", "users", "Content-Type", "appkication/json");
 
         return new MessageAndMetadata(eventAsBytes, headers);
     }

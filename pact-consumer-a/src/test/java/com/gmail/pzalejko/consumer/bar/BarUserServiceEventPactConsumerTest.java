@@ -34,6 +34,9 @@ public class BarUserServiceEventPactConsumerTest {
     @Autowired
     UserCreatedEventConsumer userCreatedEventConsumer;
 
+    @Autowired
+    ObjectMapper mapper;
+
     @Pact(consumer = CONSUMER_NAME)
     MessagePact userCreated(MessagePactBuilder builder) {
         var body = new PactDslJsonBody();
@@ -51,7 +54,6 @@ public class BarUserServiceEventPactConsumerTest {
     @Test
     @PactTestFor(pactMethod = "userCreated")
     void userCreatedEvent(List<Message> messages) throws JsonMappingException, JsonProcessingException {
-        var mapper = new ObjectMapper();
         var event = mapper.readValue(messages.get(0).contentsAsString(), UserCreatedEvent.class);
 
         assertDoesNotThrow(() -> userCreatedEventConsumer.handle(event));
