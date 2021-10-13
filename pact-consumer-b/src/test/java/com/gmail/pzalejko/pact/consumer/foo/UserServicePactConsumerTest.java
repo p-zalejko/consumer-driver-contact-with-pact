@@ -22,7 +22,7 @@ import com.jayway.jsonpath.JsonPath;
 @ExtendWith(PactConsumerTestExt.class)
 public class UserServicePactConsumerTest {
 
-    static final String CONSUMER_NAME = "consumer-foo";
+    static final String CONSUMER_NAME = "consumer-B";
     static final String PROVIDER_NAME = "UserService";
 
     static final DslPart BODY = new PactDslJsonBody()
@@ -34,7 +34,7 @@ public class UserServicePactConsumerTest {
         // @formatter:off
         return builder
             .given("User 10 exists")
-                .uponReceiving("find user by ID 1")
+                .uponReceiving("find user by ID 10")
                 .method("GET")
                 .path("/users/10")
             .willRespondWith()
@@ -49,7 +49,7 @@ public class UserServicePactConsumerTest {
         // @formatter:off
         return builder
             .given("User 20 does not exist")
-                .uponReceiving("valid 404 when a user does not exist")
+                .uponReceiving("validate 404 when a user does not exist")
                 .method("GET")
                 .path("/users/20")
             .willRespondWith()

@@ -29,7 +29,7 @@ import au.com.dius.pact.core.model.messaging.MessagePact;
 public class BarUserServiceEventPactConsumerTest {
 
     // it's a different contract! not the same as for the REST API
-    static final String CONSUMER_NAME = "consumer-bar-user-creared-event";
+    static final String CONSUMER_NAME = "consumer-A-user-creared-event";
 
     @Autowired
     UserCreatedEventConsumer userCreatedEventConsumer;

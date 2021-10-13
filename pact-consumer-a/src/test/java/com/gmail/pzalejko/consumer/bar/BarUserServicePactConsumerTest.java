@@ -22,10 +22,11 @@ import com.jayway.jsonpath.JsonPath;
 @ExtendWith(PactConsumerTestExt.class)
 public class BarUserServicePactConsumerTest {
 
-    static final String CONSUMER_NAME = "consumer-bar";
+    static final String CONSUMER_NAME = "consumer-A";
     static final String PROVIDER_NAME = "UserService";
 
-    static final DslPart BODY = new PactDslJsonBody().numberType("id") // here we compare only type!
+    static final DslPart BODY = new PactDslJsonBody()
+            .numberType("id") // here we compare only type!
             .stringValue("name", "Frank") // here we compare type AND value!
             .stringValue("email", "bar@example.com"); // here we compare type AND value!
 
@@ -49,7 +50,7 @@ public class BarUserServicePactConsumerTest {
         // @formatter:off
         return builder
             .given("User 2 does not exist")
-                .uponReceiving("valid 404 when a user does not exist")
+                .uponReceiving("validate 404 when a user does not exist")
                 .method("GET")
                 .path("/users/2")
             .willRespondWith()
