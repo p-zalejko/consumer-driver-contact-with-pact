@@ -44,3 +44,5 @@
 # In adition, explain
 * `consumerVersionSelector` explain it 
 * how to have a test only for one consumer!
+* how to have a test only for one version
+* how to test events (CDC for Event-driven architecture)
