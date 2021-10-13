@@ -14,8 +14,8 @@ Note:
 ![title](assets/img/simple-rest.png)
 
 Note:
-* why - few services
-* why - one team or maybe two?
+* few services
+* one team or maybe two?
 
 ---
 
@@ -24,8 +24,9 @@ Note:
 ![title](assets/img/advanced-rest.png)
 
 Note:
-* why - many services, many APIs
-* why - many teams, different release cycles (CI/CD)
+* many services, many APIs
+* many teams, different release cycles (CI/CD)
+* a lot of communication between teams (TALKS!)
 
 
 ---
