@@ -155,6 +155,12 @@ Note:
 
 ---
 
+## Pending contracts
+
+![title](assets/img/pending.png)
+
+---
+
 ## Worth reading
 
 * [Not only Pact for CDC](https://docs.pact.io/getting_started/comparisons/)
