@@ -148,10 +148,16 @@ Note:
 
 ---
 
-## DEMO
+## DEMO TIME!
 
 
 [The source code is on GitHub](https://github.com/p-zalejko/consumer-driver-contact-with-pact)
+
+---
+
+## Pending contracts
+
+![title](assets/img/pending.png)
 
 ---
 
