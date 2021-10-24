@@ -58,7 +58,8 @@ public class UserServiceEventPactConsumerTest {
     @Test
     @PactTestFor(pactMethod = "userCreated")
     void userCreatedEvent(List<Message> messages) throws JsonMappingException, JsonProcessingException {
-        var event = mapper.readValue(messages.get(0).contentsAsString(), UserCreatedEvent.class);
+        var firstMessage = messages.get(0).contentsAsString();
+        var event = mapper.readValue(firstMessage, UserCreatedEvent.class);
 
         assertDoesNotThrow(() -> userCreatedEventConsumer.handle(event));
     }
