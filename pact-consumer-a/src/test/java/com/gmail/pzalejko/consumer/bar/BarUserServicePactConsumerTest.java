@@ -3,6 +3,8 @@ package com.gmail.pzalejko.consumer.bar;
 import org.apache.http.client.fluent.Request;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import au.com.dius.pact.consumer.MockServer;
 import au.com.dius.pact.consumer.dsl.DslPart;
@@ -14,12 +16,15 @@ import au.com.dius.pact.core.model.RequestResponsePact;
 import au.com.dius.pact.core.model.annotations.Pact;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 import java.io.IOException;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.jsonpath.JsonPath;
 
 @ExtendWith(PactConsumerTestExt.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class BarUserServicePactConsumerTest {
 
     static final String CONSUMER_NAME = "consumer-A";
@@ -29,6 +34,12 @@ public class BarUserServicePactConsumerTest {
             .numberType("id") // here we compare only type!
             .stringValue("name", "Frank") // here we compare type AND value!
             .stringValue("email", "bar@example.com"); // here we compare type AND value!
+
+    @Autowired
+    MyService myService;
+
+    @Autowired
+    ObjectMapper mapper;
 
     @Pact(consumer = CONSUMER_NAME, provider = PROVIDER_NAME)
     public RequestResponsePact userExists(PactDslWithProvider builder) {
@@ -67,9 +78,14 @@ public class BarUserServicePactConsumerTest {
 
         assertThat(httpResponse.getStatusLine().getStatusCode()).isEqualTo(200);
 
+        // verify the response
         assertThat(responseAsJson.read("$.id", Long.class)).isNotNull();
         assertThat(responseAsJson.read("$.name", String.class)).isEqualTo("Frank");
         assertThat(responseAsJson.read("$.email", String.class)).isEqualTo("bar@example.com");
+
+        // verify our business logic
+        var user = mapper.readValue(responseAsJson.jsonString(), User.class);
+        assertDoesNotThrow(() -> myService.doSomething(user));
     }
 
     @Test
