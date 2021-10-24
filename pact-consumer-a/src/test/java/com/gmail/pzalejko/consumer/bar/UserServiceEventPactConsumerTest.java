@@ -26,7 +26,7 @@ import au.com.dius.pact.core.model.messaging.MessagePact;
 @ExtendWith(PactConsumerTestExt.class)
 @PactTestFor(providerName = "UserService-user-created-event", providerType = ProviderType.ASYNCH)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class BarUserServiceEventPactConsumerTest {
+public class UserServiceEventPactConsumerTest {
 
     // it's a different contract! not the same as for the REST API
     static final String CONSUMER_NAME = "consumer-A-user-creared-event";
@@ -48,7 +48,11 @@ public class BarUserServiceEventPactConsumerTest {
         metadata.put("Content-Type", "application/json");
         metadata.put("kafka_topic", "users");
 
-        return builder.expectsToReceive("a user created event").withMetadata(metadata).withContent(body).toPact();
+        return builder
+                .expectsToReceive("a user created event")
+                .withMetadata(metadata)
+                .withContent(body)
+                .toPact();
     }
 
     @Test

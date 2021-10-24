@@ -25,7 +25,7 @@ import com.jayway.jsonpath.JsonPath;
 
 @ExtendWith(PactConsumerTestExt.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class BarUserServicePactConsumerTest {
+public class UserServicePactConsumerTest {
 
     static final String CONSUMER_NAME = "consumer-A";
     static final String PROVIDER_NAME = "UserService";
