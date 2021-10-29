@@ -78,6 +78,7 @@ Note:
 Note:
 * unknown services - do we know what they need?
 * CDC tests explicit consumer's contracts!
+* few services - one team, simple f2f communication enough?
 
 ---
 
