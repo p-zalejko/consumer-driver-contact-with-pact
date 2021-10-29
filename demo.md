@@ -21,6 +21,7 @@
 * * publish results to the broker (explain what we have there now...)
 * explain `@State` - how it works, what it does
 * show a sample controller class - explain that it will be tested (relation to the @State annotation)
+* * comment the `@GetMapping("/users/{id}")` so that the API will not work!
 * implement all tests for the contract
 * launch tests
 * publish results
