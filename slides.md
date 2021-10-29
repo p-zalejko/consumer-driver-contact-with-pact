@@ -87,11 +87,14 @@ Note:
 
 > Fast, easy and reliable testing for integrating web apps, APIs and microservices
 
+Note:
+* so far we had theory, it's time for real work ;)
+ 
 ---
 
 ## Consumer
 
-* defines the contracts (expectations)
+* defines the contract (expectations)
 
 Note:
 * what the consumer needs
