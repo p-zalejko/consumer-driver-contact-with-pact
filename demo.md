@@ -15,6 +15,7 @@
 
 # provider and the first contract
 * show an empty class for a pact test (just an initial stuff...)
+* * comment the existing test methods
 * launch the test
 * * test passes! explain WHY (pending contracts, explain how it works)
 * * show logs, information that the contract is in the pending state
