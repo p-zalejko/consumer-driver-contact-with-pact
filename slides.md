@@ -87,9 +87,11 @@ Note:
 
 > Fast, easy and reliable testing for integrating web apps, APIs and microservices
 
+
 Note:
-* so far we had theory, it's time for real work ;)
+so far we had theory, it's time for real work ;)
  
+
 ---
 
 ## Consumer
