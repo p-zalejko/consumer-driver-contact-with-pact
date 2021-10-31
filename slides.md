@@ -177,6 +177,7 @@ Note:
 
 * [Not only Pact](https://docs.pact.io/getting_started/comparisons/)
 * [Not only Java](https://docs.pact.io/implementation_guides/cli/)
+* [Spring Cloud Contract and Pact](https://cloud.spring.io/spring-cloud-static/spring-cloud-contract/2.2.0.M2/reference/html/howto.html#how-to-use-pact-broker)
 * [Pending contracts](https://docs.pact.io/pact_broker/advanced_topics/pending_pacts/)
 * [WIP contracts](https://docs.pact.io/pact_broker/advanced_topics/wip_pacts/)
 * [Versioning and tags!](https://docs.pact.io/getting_started/versioning_in_the_pact_broker/)
