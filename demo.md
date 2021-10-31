@@ -15,12 +15,14 @@
 
 # provider and the first contract
 * show an empty class for a pact test (just an initial stuff...)
+* * comment the existing test methods
 * launch the test
 * * test passes! explain WHY (pending contracts, explain how it works)
 * * show logs, information that the contract is in the pending state
 * * publish results to the broker (explain what we have there now...)
 * explain `@State` - how it works, what it does
 * show a sample controller class - explain that it will be tested (relation to the @State annotation)
+* * comment the `@GetMapping("/users/{id}")` so that the API will not work!
 * implement all tests for the contract
 * launch tests
 * publish results
