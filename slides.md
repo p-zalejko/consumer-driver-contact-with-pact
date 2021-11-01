@@ -165,6 +165,10 @@ Note:
 
 [The source code is on GitHub](https://github.com/p-zalejko/consumer-driver-contact-with-pact)
 
+Note:
+- an example app will be extremely boring
+- the intention is to focus on Pact, not on the example app...  
+
 ---
 
 ## Pending contracts
