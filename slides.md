@@ -76,7 +76,7 @@ Note:
 * we have very few services (one, two...) 
 
 Note:
-* unknown services - do we know what they need?
+* unknown consumers cannot define a contract
 * CDC tests explicit consumer's contracts!
 * few services - one team, simple f2f communication enough?
 
