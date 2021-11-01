@@ -33,7 +33,7 @@
 * * explain how it works now - pending contracts
 
 # Consumer publishes a new contract
-* add a new field to the contract
+* add a new field to the contract (int age)
 * publish a new contract WITH the new version number (1.1.0)
 
 # Provider
