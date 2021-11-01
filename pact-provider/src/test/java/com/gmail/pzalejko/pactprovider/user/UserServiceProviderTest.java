@@ -45,6 +45,21 @@ public class UserServiceProviderTest {
         context.verifyInteraction();
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
+
     @State("User 1 exists")
     public void testGetUser1() {
         var user = new User(1L, "Frank", "bar@example.com");
@@ -61,5 +76,7 @@ public class UserServiceProviderTest {
         var user = new User(1L, "Frank", "bar@example.com");
         Mockito.when(userService.findUserById(anyLong())).thenReturn(Optional.of(user));
     }
+
+    */
 
 }
