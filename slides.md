@@ -1,4 +1,4 @@
-# Consumer-Driven Contracts
+# Consumer-Driven Contract
 
 ### with Pact
 
@@ -55,7 +55,7 @@ Note:
 
 ---
 
-## Consumer-Driven Contracts
+## Consumer-Driven Contract
 ### What we will get
 
 * Isolation
@@ -69,7 +69,7 @@ Note:
 
 ---
 
-## Consumer-Driven Contracts
+## Consumer-Driven Contract
 ### When it does not fit
 
 * public APIs for unknown consumers
