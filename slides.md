@@ -156,12 +156,11 @@ Note:
 * centralized contract registry
 * keeps validation results
 * allows to determine if contracts are met
-* graphs on the broker
+* visualises the relationships between your services
 
 Note:
-- versioning!
-- tags
-- matrix table
+- helps with deployment
+- allows to check which version can be deplpyed!
 - best practices: git hash, branch, environment name, etc.
 
 ---
@@ -181,6 +180,7 @@ Note:
 
 ## Worth reading
 
+* [Pactflow](https://pactflow.io/)
 * [Not only Pact](https://docs.pact.io/getting_started/comparisons/)
 * [Not only Java](https://docs.pact.io/implementation_guides/cli/)
 * [Spring Cloud Contract and Pact](https://cloud.spring.io/spring-cloud-static/spring-cloud-contract/2.2.0.M2/reference/html/howto.html#how-to-use-pact-broker)
