@@ -8,7 +8,7 @@
 # broker
 * show the broker
 * show the contract 
-* * show a call graph
+* * show the relationship graph
 * * show versions and tags
 * * explain relation between the consumer and provider (versioning + tags)
 * best practices: git hash, branch, environment name, etc.
@@ -18,7 +18,7 @@
 * * comment the existing test methods
 * launch the test
 * * test passes! explain WHY (pending contracts, explain how it works)
-* * show logs, information that the contract is in the pending state
+* * show logs, information that the contract is in the `pending` state
 * * publish results to the broker (explain what we have there now...)
 * explain `@State` - how it works, what it does
 * show a sample controller class - explain that it will be tested (relation to the @State annotation)

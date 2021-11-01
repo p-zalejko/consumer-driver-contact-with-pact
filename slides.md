@@ -65,7 +65,7 @@ Note:
 * Well-Fittedness
 * Reveal Unused Interfaces
 
-[source](https://reflectoring.io/7-reasons-for-consumer-driven-contracts/)
+[read more here](https://reflectoring.io/7-reasons-for-consumer-driven-contracts/)
 
 ---
 
@@ -89,7 +89,7 @@ Note:
 
 
 Note:
-so far we had theory, it's time for real work ;)
+so far we've seen only theory, it's time for real work ;)
  
 
 ---
@@ -98,9 +98,10 @@ so far we had theory, it's time for real work ;)
 
 * defines the contract (expectations)
 
+
 Note:
 * what the consumer needs
-* matchery (type vs value) 
+* contract -> matchery (type vs value) 
 
 ---
 
@@ -142,12 +143,6 @@ NOTE:
 
 * fulfils the contract
 * "signs up the contract"
-
-Note:
-* explain @State and how it works (how it "finds" rest controller)
-* consumerVersionSelector
-* pending contracts
-* testing all contracts vs one contract
 
 ---
 
