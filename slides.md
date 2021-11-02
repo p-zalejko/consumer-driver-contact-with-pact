@@ -79,6 +79,7 @@ Note:
 * unknown consumers cannot define a contract
 * CDC tests explicit consumer's contracts!
 * few services - one team, simple f2f communication enough?
+* maybe it's just a UI <> back-end app (one consumer for the API)
 
 ---
 
