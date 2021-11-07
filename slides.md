@@ -152,7 +152,7 @@ NOTE:
 * centralized contract registry
 * keeps validation results
 * allows to determine if contracts are met
-* visualises the relationships between your services
+* visualises the relationships between services
 
 Note:
 - helps with deployment
