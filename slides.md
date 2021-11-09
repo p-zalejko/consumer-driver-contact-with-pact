@@ -79,6 +79,7 @@ Note:
 * unknown consumers cannot define a contract
 * CDC tests explicit consumer's contracts!
 * few services - one team, simple f2f communication enough?
+* maybe it's just a UI <> back-end app (one consumer for the API)
 
 ---
 
@@ -164,7 +165,7 @@ NOTE:
 * centralized contract registry
 * keeps validation results
 * allows to determine if contracts are met
-* visualises the relationships between your services
+* visualises the relationships between services
 
 Note:
 - helps with deployment
