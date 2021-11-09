@@ -56,21 +56,21 @@ Note:
 ---
 
 ## Consumer-Driven Contract
-### What we will get
+### Benefits
 
-* Isolation
-* Simplified End-to-End Tests (lack of e2e?)
-* Feedback Time
-* Stability
-* Well-Fittedness
-* Reveal Unused Interfaces
+* isolation
+* simplified end-to-end tests (lack of e2e?)
+* feedback time
+* stability
+* well-fittedness
+* reveal unused interfaces
 
 [read more here](https://reflectoring.io/7-reasons-for-consumer-driven-contracts/)
 
 ---
 
 ## Consumer-Driven Contract
-### When it does not fit
+### When it doesn't fit
 
 * public APIs for unknown consumers
 * we have very few services (one, two...) 
@@ -136,6 +136,19 @@ Note:
 
 NOTE:
 * show the file later (during a live demo)
+
+
+---
+
+<section>
+  <pre><code data-trim data-noescape>
+(def lazy-fib
+  (concat
+   [0 1]
+   ((fn rfib [a b]
+        (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
+  </code></pre>
+</section>
 
 ---
 
