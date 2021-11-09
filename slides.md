@@ -141,36 +141,6 @@ NOTE:
 
 ---
 
-<section>
-  <pre><code data-trim data-noescape>
-{
-  "consumer": {
-    "name": "consumer-bar"
-  },
-  "interactions": [
-    {
-      "description": "validate HTTP 200 when the user exists",
-      "providerStates": [
-        {
-          "name": "User 1 exists"
-        }
-      ],
-      "request": {
-        "method": "GET",
-        "path": "/users/1"
-      },
-      "response": {
-        "body": {
-          "email": "bar@example.com",
-          "id": 1,
-          "name": "Frank"
-        },
-        ...
-  </code></pre>
-</section>
-
----
-
 ## Provider
 
 * fulfils the contract
