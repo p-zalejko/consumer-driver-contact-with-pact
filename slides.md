@@ -143,11 +143,29 @@ NOTE:
 
 <section>
   <pre><code data-trim data-noescape>
-(def lazy-fib
-  (concat
-   [0 1]
-   ((fn rfib [a b]
-        (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
+{
+  "consumer": {
+    "name": "consumer-bar"
+  },
+  "interactions": [
+    {
+      "description": "validate HTTP 200 when the user exists",
+      "providerStates": [
+        {
+          "name": "User 1 exists"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/users/1"
+      },
+      "response": {
+        "body": {
+          "email": "bar@example.com",
+          "id": 1,
+          "name": "Frank"
+        },
+        ...
   </code></pre>
 </section>
 
