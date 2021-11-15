@@ -34,13 +34,23 @@ Note:
 
 ![title](assets/gif/minions.gif)
 
+Note:
+* they've got what they need
+
 ---
 
 ![title](assets/img/great_success.jpg)
 
+Note:
+* great_success!
+
 ---
 
 ![title](assets/img/areyoufucking.jpg)
+
+Note:
+* apart from the team that maintains a legacy system
+* and they need String there... 
 
 ---
 
