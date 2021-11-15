@@ -28,6 +28,7 @@ Note:
 * many teams, different release cycles (CI/CD)
 * a lot of communication between teams (TALKS!)
 * "game" with teams (attendees)
+* * chnage String -> Int 
 
 ---
 
