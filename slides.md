@@ -27,7 +27,19 @@ Note:
 * many services, many APIs
 * many teams, different release cycles (CI/CD)
 * a lot of communication between teams (TALKS!)
+* "game" with teams (attendees)
 
+---
+
+![title](assets/gif/minions.gif)
+
+---
+
+![title](assets/img/great_success.jpg)
+
+---
+
+![title](assets/img/areyoufucking.jpg)
 
 ---
 
