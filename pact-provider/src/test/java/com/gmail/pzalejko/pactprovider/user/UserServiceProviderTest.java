@@ -23,7 +23,7 @@ import au.com.dius.pact.provider.junitsupport.loader.PactBroker;
 
 @IgnoreNoPactsToVerify
 @Provider("UserService")
-@PactBroker(host = "localhost", port = "9292")
+@PactBroker(host = "localhost", port = "9292", enablePendingPacts = "true", providerTags = "main")
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class UserServiceProviderTest {
