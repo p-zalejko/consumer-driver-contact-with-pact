@@ -75,7 +75,6 @@ Note:
 [source](https://docs.pact.io/)
 
 Note:
-* why - many teams, different release cycles (CI/CD)
 * players: consumer, provider, and contract
 * consumer creates the contract
 * consumer tests the contract
