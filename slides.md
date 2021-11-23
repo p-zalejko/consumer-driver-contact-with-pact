@@ -70,7 +70,7 @@ Note:
 ![title](assets/img/pact-summary.png)
 
 Note:
-* players: consumer, provider, and contract
+* players: consumer, provider, and the contract
 * consumer creates the contract
 * consumer tests the contract
 * providers tests the contract as well
@@ -125,7 +125,7 @@ so far we've seen only theory, it's time for real work ;)
 
 Note:
 * what the consumer needs
-* contract -> matchery (type vs value) 
+* contract -> matchers (type vs value) 
 
 ---
 
