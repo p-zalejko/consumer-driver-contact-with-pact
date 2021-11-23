@@ -37,13 +37,12 @@
 * launch tests in the provider
 * * show that it fails. Explain why we do not want it! (pending contracts...)
 * * make the contract pending
+* * launch test again -> they pass now...
 * * show logs, information that the contract is in the `pending` state
-* * publish results to the broker (explain what we have there now...)
+* * publish results to the broker (failed results...)
 * * fix the contract, build it again
-* * show why it passes - pending contracts
+* * show that tests pass now
 * * publish results to the broker
-* adjust tests to the new contract
-* * launch tests and publish new results
 
 # In adition, explain
 * `consumerVersionSelector` explain it 
