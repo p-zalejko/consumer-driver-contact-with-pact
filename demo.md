@@ -28,7 +28,6 @@
 * make a change in order to BREAK the contract
 * * launch tests
 * * show results
-* * explain how it works now - pending contracts
 
 # Consumer publishes a new contract
 * add a new field to the contract (int age)
