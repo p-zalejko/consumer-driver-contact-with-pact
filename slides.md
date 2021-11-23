@@ -60,8 +60,7 @@ Note:
 ![title](assets/img/advanced-rest-with-events.png)
 
 Note:
-* many teams, different release cycles (CI/CD)
-* not only REST
+* not only REST...
 * events...
 
 ---
