@@ -16,6 +16,7 @@ Note:
 Note:
 * few services
 * one team or maybe two?
+* assume that one team can handle it
 
 ---
 
@@ -27,7 +28,7 @@ Note:
 * many services, many APIs
 * many teams, different release cycles (CI/CD)
 * a lot of communication between teams (TALKS!)
-* "game" with teams (attendees)
+* "game" with teams (attendees, team ABC)
 * * change String -> Int 
 
 ---
@@ -35,21 +36,21 @@ Note:
 ![title](assets/gif/minions.gif)
 
 Note:
-* they've got what they need
+* A-team: they've got what they need
 
 ---
 
 ![title](assets/img/great_success.jpg)
 
 Note:
-* great success!
+* C-team: delivered, great success!
 
 ---
 
 ![title](assets/img/areyoufucking.jpg)
 
 Note:
-* apart from the team that maintains a legacy system
+* apart from the B-team that maintains a legacy system
 * and they need a String there... 
 
 ---
@@ -69,8 +70,8 @@ Note:
 [source](https://docs.pact.io/)
 
 Note:
-* why - many services, many APIs
 * why - many teams, different release cycles (CI/CD)
+* players: consumer, provider, and contract
 * consumer creates the contract
 * consumer tests the contract
 * providers tests the contract as well
