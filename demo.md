@@ -18,7 +18,7 @@
 * * comment the existing test methods
 * launch the test
 * * test fails. Explain why...
-* explain `@State` - how it works, what it does
+* explain `@State` - how it works, what it does -> how it "finds/maps" contract to the impl.
 * show a sample controller class - explain that it will be tested (relation to the @State annotation)
 * * comment the `@GetMapping("/users/{id}")` so that the API will not work!
 * implement all tests for the contract
