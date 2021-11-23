@@ -59,20 +59,16 @@ Note:
 
 ![title](assets/img/advanced-rest-with-events.png)
 
-
----
-
-
-## CDC to the rescue
-
-![title](assets/img/pact-summary.png)
-
 Note:
 * many teams, different release cycles (CI/CD)
 * not only REST
 * events...
 
-[source](https://docs.pact.io/)
+---
+
+## CDC to the rescue
+
+![title](assets/img/pact-summary.png)
 
 Note:
 * players: consumer, provider, and contract
