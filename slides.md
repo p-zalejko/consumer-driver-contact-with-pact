@@ -179,7 +179,7 @@ NOTE:
 ## Broker
 
 * centralized contract registry
-* keeps validation results
+* keeps verification results
 * allows to determine if contracts are met
 * visualises the relationships between services
 
