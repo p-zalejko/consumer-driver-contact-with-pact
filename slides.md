@@ -67,6 +67,11 @@ Note:
 
 ![title](assets/img/pact-summary.png)
 
+Note:
+* many teams, different release cycles (CI/CD)
+* not only REST
+* events...
+
 [source](https://docs.pact.io/)
 
 Note:
