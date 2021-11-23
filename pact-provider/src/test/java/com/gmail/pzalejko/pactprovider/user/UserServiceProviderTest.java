@@ -16,14 +16,12 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import au.com.dius.pact.provider.junit5.HttpTestTarget;
 import au.com.dius.pact.provider.junit5.PactVerificationContext;
 import au.com.dius.pact.provider.junit5.PactVerificationInvocationContextProvider;
-import au.com.dius.pact.provider.junitsupport.IgnoreNoPactsToVerify;
 import au.com.dius.pact.provider.junitsupport.Provider;
 import au.com.dius.pact.provider.junitsupport.State;
 import au.com.dius.pact.provider.junitsupport.loader.PactBroker;
 
-@IgnoreNoPactsToVerify
 @Provider("UserService")
-@PactBroker(host = "localhost", port = "9292", enablePendingPacts = "true", providerTags = "main")
+@PactBroker(host = "localhost", port = "9292", enablePendingPacts = "false", providerTags = "main")
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class UserServiceProviderTest {
@@ -58,8 +56,7 @@ public class UserServiceProviderTest {
 
 
 
-    /*
-
+    /* 
     @State("User 1 exists")
     public void testGetUser1() {
         var user = new User(1L, "Frank", "bar@example.com");
@@ -78,5 +75,4 @@ public class UserServiceProviderTest {
     }
 
     */
-
 }
