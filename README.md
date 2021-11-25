@@ -1,4 +1,4 @@
-# Consumer-Driver Contact + Pact
+# Consumer-Driver Contact + Pact (http://pact.io/)
 
 A simple application that shows how pact can be used:
 - two consumers
